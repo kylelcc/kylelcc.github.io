@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My First Machine Learning Project – Kaggle Titanic Challenge - LCC</title>
+  <title>Surviving the Titanic: My First Machine Learning Journey - LCC</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fragment+Mono:wght@400&display=swap" rel="stylesheet">
@@ -15,7 +15,6 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
 </head>
 <body>
-  <!-- Navigation -->
   <header class="nav-header">
     <a href="../index.html" class="logo">LCC</a>
     <nav class="nav-links">
@@ -34,114 +33,91 @@
     </button>
   </header>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="mobile-menu">
-    <div class="mobile-menu-header">
-      <button id="close-menu" class="close-menu-button">
-        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-    </div>
-    <nav class="mobile-nav-links">
-      <a href="../blog.html" class="mobile-nav-link">Blog</a>
-      <a href="../contact.html" class="mobile-nav-link">Contact</a>
-      <button id="mobile-theme-toggle" class="mobile-theme-toggle">
-        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-        </svg>
-        Dark Mode
-      </button>
-    </nav>
-  </div>
-
-  <!-- Article Content -->
   <main class="article-main">
     <header class="article-header">
       <div class="article-header-content">
         <nav class="breadcrumb">
           <a href="../blog.html" class="breadcrumb-link">Blog</a>
           <span class="breadcrumb-separator">/</span>
-          <span class="breadcrumb-current">My First Machine Learning Project – Kaggle Titanic Challenge</span>
+          <span class="breadcrumb-current">Surviving the Titanic: My First Machine Learning Journey</span>
         </nav>
         
         <div class="article-meta">
-          <time class="article-date">August 12, 2025</time>
+          <time class="article-date">August 13, 2025</time>
           <span class="article-category">Machine Learning</span>
-          <span class="reading-time">5 min read</span>
+          <span class="reading-time">8 min read</span>
         </div>
         
-        <h1 class="article-title">My First Machine Learning Project – Kaggle Titanic Challenge</h1>
-        <p class="article-subtitle">How I went from raw CSV files to predictive insights, and what I learned along the way.</p>
+        <h1 class="article-title">Surviving the Titanic: My First Machine Learning Journey</h1>
+        <p class="article-subtitle">From raw passenger data to predictive survival models — lessons from my first Kaggle challenge</p>
         
         <div class="article-tags">
-          <span class="article-tag">Python</span>
-          <span class="article-tag">Data Analytics</span>
           <span class="article-tag">Kaggle</span>
+          <span class="article-tag">Data Science</span>
+          <span class="article-tag">Machine Learning</span>
         </div>
       </div>
     </header>
 
     <article class="article-content">
       <div class="article-container">
-        
+
         <section class="article-section">
           <p class="article-intro">
-            This week I finished my first Kaggle machine learning project: the Titanic Survival Prediction challenge. It might be the "hello world" of data science, but for me it was a hands-on crash course in data cleaning, feature engineering, and model training.
+            This week I finished my first Kaggle machine learning project: the Titanic Survival Prediction challenge. It might be the “hello world” of data science, but for me it was a hands-on crash course in data cleaning, feature engineering, and model training.
           </p>
+          <p>When I first opened the project, I imagined spending most of my time comparing different models and celebrating high accuracy scores. Instead, I quickly learned that the real work begins long before the model is built. This project became a crash course in the practical realities of machine learning, and it taught me lessons that I can already see translating into my work as a data analyst and marketing professional.</p>
         </section>
 
         <section class="article-section">
-          <h2>The Tools I Used</h2>
-          <p>
-            I worked in Python using <strong>Pandas</strong> for data manipulation, <strong>scikit-learn</strong> for model building, and <strong>Matplotlib</strong>/<strong>Seaborn</strong> for visual exploration. I tried out Logistic Regression, Random Forest, and Gradient Boosting — and discovered that tuning hyperparameters can sometimes feel like adjusting the sails in unpredictable wind.
-          </p>
+          <h2>Phase 1: The Iceberg Beneath the Surface – Data Cleaning</h2>
+          <p>The phrase “data cleaning is 80% of the job” is something I had heard before, but now I truly understand it.</p>
+          <p>The Titanic dataset looked simple at first glance: passenger details, ages, fares, and whether they survived. Once I started exploring it, I found missing ages, incomplete cabin information, and even missing embarkation points. There were also inconsistent data types, such as numerical fields stored as text, and categorical features that needed standardization.</p>
+          <p>I filled missing ages using median values, encoded categorical variables like “Sex” and “Embarked,” and normalized continuous features to ensure they were on the same scale. This stage taught me that a model is only as good as the data it receives, and that careful preparation is the foundation of reliable predictions.</p>
         </section>
 
         <section class="article-section">
-          <h2>Key Learnings</h2>
+          <h2>Phase 2: Feature Engineering – Turning Raw Data into Predictive Power</h2>
+          <p>Once the data was clean, I moved into feature engineering, which felt like uncovering hidden clues. The goal here was to create new variables that could help the model learn more effectively.</p>
           <ul class="article-list">
-            <li><strong>Data cleaning is 80% of the job</strong> — Handling missing ages and embarked ports taught me that messy data is the rule, not the exception.</li>
-            <li><strong>Feature engineering matters</strong> — Simple changes like grouping passengers by family size improved accuracy more than I expected.</li>
-            <li><strong>Model selection is iterative</strong> — There’s rarely a “best” model on the first try. Testing and comparing is the only way to know.</li>
+            <li><strong>Title extraction:</strong> Pulling out titles like “Mr”, “Miss”, and “Dr” from names provided social context that correlated with survival.</li>
+            <li><strong>Family size:</strong> Combining the number of siblings/spouses and parents/children on board into a single variable revealed patterns in survival rates.</li>
+            <li><strong>Cabin deck grouping:</strong> Mapping cabin numbers to decks gave location-based survival insights.</li>
           </ul>
+          <p>This stage helped me appreciate that strong predictive performance often comes from well-thought-out features, not just sophisticated algorithms.</p>
         </section>
 
         <section class="article-section">
-          <h2>Applying It Beyond Kaggle</h2>
-          <p>
-            The steps I followed here — understanding the data, cleaning it, finding meaningful variables, and testing hypotheses — are exactly the same skills I use in marketing analytics. Whether predicting churn, segmenting audiences, or optimizing campaigns, the core process is transferable. The Titanic project reminded me that analytics isn’t just about the “what,” but also the “why” behind the numbers.
-          </p>
+          <h2>Phase 3: Model Selection and Hyperparameter Tuning</h2>
+          <p>With clean data and meaningful features, I began testing different models. I started with Logistic Regression as a baseline. Then I tried more complex models like Random Forest, Gradient Boosting, and XGBoost.</p>
+          <p>I found that ensemble models like Random Forest and Gradient Boosting performed better once the features were optimized. I also used GridSearchCV to tune hyperparameters such as maximum tree depth, number of estimators, and learning rate. This fine-tuning improved accuracy and helped me understand how small adjustments can make a big difference in performance.</p>
         </section>
 
         <section class="article-section">
-          <h2>My Next Step</h2>
-          <p>
-            Next, I plan to take on a dataset closer to my domain expertise: customer transaction data. The goal? Combine my marketing background with new ML skills to uncover patterns that humans might miss — and turn them into business value.
-          </p>
+          <h2>Applying These Skills to My Career</h2>
+          <ul class="article-list">
+            <li><strong>Data cleaning:</strong> Mirrors preparing customer datasets with missing demographics, duplicates, and inconsistent records.</li>
+            <li><strong>Feature engineering:</strong> Similar to creating business metrics like customer lifetime value or engagement scores.</li>
+            <li><strong>Model selection and tuning:</strong> Relates to choosing the right predictive tools for tasks like churn prediction or campaign performance forecasting.</li>
+          </ul>
+          <p>This project showed me how machine learning can take me from descriptive analytics, where we explain what happened, to predictive analytics, where we anticipate what is likely to happen.</p>
+        </section>
+
+        <section class="article-section">
+          <h2>Final Reflection</h2>
+          <p>The Titanic project was more than a coding exercise. It was a complete learning experience in managing a machine learning workflow from start to finish. I discovered that success comes from a balance of technical skill, creative problem solving, and attention to detail.</p>
+          <p>I now see machine learning as a valuable extension of my existing analytical toolkit. In marketing and data analysis, these skills can help transform large volumes of raw information into actionable insights that guide better business decisions.</p>
         </section>
 
         <footer class="article-footer">
           <div class="article-footer-content">
             <p class="article-footer-text">
-              Have you tried the Titanic challenge? What was your biggest takeaway? Share your experience — I’d love to compare notes.
+              My first Kaggle project taught me that success in machine learning isn’t just about the model — it’s about the entire process, from data cleaning to deploying insights.
             </p>
           </div>
         </footer>
-
-        <nav class="article-navigation">
-          <a href="../blog.html" class="nav-back">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m7-7l-7 7 7 7"></path>
-            </svg>
-            Back to Blog
-          </a>
-        </nav>
-
       </div>
     </article>
   </main>
-
-  <script src="assets/blog-post.js"></script>
 </body>
 </html>
