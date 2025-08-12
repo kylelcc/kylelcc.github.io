@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My First Machine Learning Project – Kaggle Titanic Challenge - LCC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fragment+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="assets/blog-post.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="nav-header">
+    <a href="../index.html" class="logo">LCC</a>
+    <nav class="nav-links">
+      <a href="../blog.html" class="nav-link">Blog</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+      <button id="theme-toggle" class="theme-toggle">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+      </button>
+    </nav>
+    <button id="mobile-menu-button" class="mobile-menu-button">
+      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu-header">
+      <button id="close-menu" class="close-menu-button">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="../blog.html" class="mobile-nav-link">Blog</a>
+      <a href="../contact.html" class="mobile-nav-link">Contact</a>
+      <button id="mobile-theme-toggle" class="mobile-theme-toggle">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+        Dark Mode
+      </button>
+    </nav>
+  </div>
+
+  <!-- Article Content -->
+  <main class="article-main">
+    <header class="article-header">
+      <div class="article-header-content">
+        <nav class="breadcrumb">
+          <a href="../blog.html" class="breadcrumb-link">Blog</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">My First Machine Learning Project – Kaggle Titanic Challenge</span>
+        </nav>
+        
+        <div class="article-meta">
+          <time class="article-date">August 12, 2025</time>
+          <span class="article-category">Machine Learning</span>
+          <span class="reading-time">5 min read</span>
+        </div>
+        
+        <h1 class="article-title">My First Machine Learning Project – Kaggle Titanic Challenge</h1>
+        <p class="article-subtitle">How I went from raw CSV files to predictive insights, and what I learned along the way.</p>
+        
+        <div class="article-tags">
+          <span class="article-tag">Python</span>
+          <span class="article-tag">Data Analytics</span>
+          <span class="article-tag">Kaggle</span>
+        </div>
+      </div>
+    </header>
+
+    <article class="article-content">
+      <div class="article-container">
+        
+        <section class="article-section">
+          <p class="article-intro">
+            This week I finished my first Kaggle machine learning project: the Titanic Survival Prediction challenge. It might be the "hello world" of data science, but for me it was a hands-on crash course in data cleaning, feature engineering, and model training.
+          </p>
+        </section>
+
+        <section class="article-section">
+          <h2>The Tools I Used</h2>
+          <p>
+            I worked in Python using <strong>Pandas</strong> for data manipulation, <strong>scikit-learn</strong> for model building, and <strong>Matplotlib</strong>/<strong>Seaborn</strong> for visual exploration. I tried out Logistic Regression, Random Forest, and Gradient Boosting — and discovered that tuning hyperparameters can sometimes feel like adjusting the sails in unpredictable wind.
+          </p>
+        </section>
+
+        <section class="article-section">
+          <h2>Key Learnings</h2>
+          <ul class="article-list">
+            <li><strong>Data cleaning is 80% of the job</strong> — Handling missing ages and embarked ports taught me that messy data is the rule, not the exception.</li>
+            <li><strong>Feature engineering matters</strong> — Simple changes like grouping passengers by family size improved accuracy more than I expected.</li>
+            <li><strong>Model selection is iterative</strong> — There’s rarely a “best” model on the first try. Testing and comparing is the only way to know.</li>
+          </ul>
+        </section>
+
+        <section class="article-section">
+          <h2>Applying It Beyond Kaggle</h2>
+          <p>
+            The steps I followed here — understanding the data, cleaning it, finding meaningful variables, and testing hypotheses — are exactly the same skills I use in marketing analytics. Whether predicting churn, segmenting audiences, or optimizing campaigns, the core process is transferable. The Titanic project reminded me that analytics isn’t just about the “what,” but also the “why” behind the numbers.
+          </p>
+        </section>
+
+        <section class="article-section">
+          <h2>My Next Step</h2>
+          <p>
+            Next, I plan to take on a dataset closer to my domain expertise: customer transaction data. The goal? Combine my marketing background with new ML skills to uncover patterns that humans might miss — and turn them into business value.
+          </p>
+        </section>
+
+        <footer class="article-footer">
+          <div class="article-footer-content">
+            <p class="article-footer-text">
+              Have you tried the Titanic challenge? What was your biggest takeaway? Share your experience — I’d love to compare notes.
+            </p>
+          </div>
+        </footer>
+
+        <nav class="article-navigation">
+          <a href="../blog.html" class="nav-back">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m7-7l-7 7 7 7"></path>
+            </svg>
+            Back to Blog
+          </a>
+        </nav>
+
+      </div>
+    </article>
+  </main>
+
+  <script src="assets/blog-post.js"></script>
+</body>
+</html>
