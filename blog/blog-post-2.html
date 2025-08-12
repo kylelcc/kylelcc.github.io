@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Machine Learning: the Tech That Powers Modern LLMs - LCC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fragment+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="assets/blog-post.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+<body>
+  <header class="nav-header">
+    <a href="../index.html" class="logo">LCC</a>
+    <nav class="nav-links">
+      <a href="../blog.html" class="nav-link">Blog</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+      <button id="theme-toggle" class="theme-toggle">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+      </button>
+    </nav>
+    <button id="mobile-menu-button" class="mobile-menu-button">
+      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </header>
+
+  <main class="article-main">
+    <header class="article-header">
+      <div class="article-header-content">
+        <nav class="breadcrumb">
+          <a href="../blog.html" class="breadcrumb-link">Blog</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Machine Learning: the Tech That Powers Modern LLMs</span>
+        </nav>
+        
+        <div class="article-meta">
+          <time class="article-date">February 28, 2025</time>
+          <span class="article-category">Artificial Intelligence</span>
+          <span class="reading-time">8 min read</span>
+        </div>
+        
+        <h1 class="article-title">Machine Learning: the Tech That Powers Modern LLMs</h1>
+        <p class="article-subtitle">Understanding the ML foundations that make generative AI possible</p>
+        
+        <div class="article-tags">
+          <span class="article-tag">Machine Learning</span>
+          <span class="article-tag">Generative AI</span>
+          <span class="article-tag">LLMs</span>
+        </div>
+      </div>
+    </header>
+
+    <article class="article-content">
+      <div class="article-container">
+        <section class="article-section">
+          <p class="article-intro">
+            For my learning this week, I decided to answer the common question in the field of AI: how machine learning (ML) and generative AI (GenAI) are connected, and why a strong grasp of ML fundamentals is crucial for understanding modern large language models (LLMs).
+          </p>
+        </section>
+
+        <section class="article-section">
+          <h2>The Journey Begins: AI vs. Machine Learning</h2>
+          <p>Artificial Intelligence (AI) is the broad discipline—like physics in science—focused on building systems that can reason, learn, and act autonomously.</p>
+          <p>Machine Learning is a subset of AI—focused on teaching machines to learn patterns from data without explicit programming.</p>
+          <p>This “subset” perspective is important because LLMs like Gemini, GPT, or LaMDA are not magic—they’re built on the same ML principles I first learned when working with supervised and unsupervised models.</p>
+        </section>
+
+        <section class="article-section">
+          <h2>Machine Learning Basics That Power LLMs</h2>
+          <p>In ML, models learn from data:</p>
+          <ul class="article-list">
+            <li><strong>Supervised Learning:</strong> Train on labeled examples (e.g., bill amount → tip prediction).</li>
+            <li><strong>Unsupervised Learning:</strong> Cluster or group unlabeled data to discover hidden patterns.</li>
+            <li><strong>Semi-supervised Learning:</strong> A mix of labeled and unlabeled data—common in large-scale AI systems because labeled data is expensive to produce at scale.</li>
+            <li><strong>Deep Learning:</strong> Uses artificial neural networks with many layers to extract complex patterns—key for LLMs.</li>
+          </ul>
+        </section>
+
+        <section class="article-section">
+          <h2>From Discriminative to Generative Models</h2>
+          <p>Discriminative Models learn the boundary between classes, while Generative Models learn the joint probability of inputs and outputs, enabling them to create new data. LLMs fall into the generative category.</p>
+        </section>
+
+        <section class="article-section">
+          <h2>Generative AI and Large Language Models</h2>
+          <p>Generative AI uses massive foundation models trained on vast amounts of multimodal data. Transformers, introduced in 2018, revolutionized LLM design with attention mechanisms and encoder-decoder architectures.</p>
+        </section>
+
+        <section class="article-section">
+          <h2>Why Learning ML Fundamentals Matters for LLMs</h2>
+          <p>Feature engineering and probability awareness are crucial when working with LLMs—these concepts help shape model behavior beyond trial-and-error prompting.</p>
+          
+          <h3>ML Principles in Practice</h3>
+          <table class="table-auto border-collapse border border-gray-300 w-full my-6">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border border-gray-300 px-4 py-2">ML Principle</th>
+                <th class="border border-gray-300 px-4 py-2">Regular Prompt Engineering</th>
+                <th class="border border-gray-300 px-4 py-2">ML-Informed Prompting</th>
+                <th class="border border-gray-300 px-4 py-2">Why It Works Better</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-300 px-4 py-2">Feature Engineering</td>
+                <td class="border border-gray-300 px-4 py-2">“Summarize this market research report.”</td>
+                <td class="border border-gray-300 px-4 py-2">“Summarize this market research report on electric vehicle adoption for an audience of city transportation planners, focusing only on consumer behavior trends and infrastructure challenges mentioned in sections 3 and 4.”</td>
+                <td class="border border-gray-300 px-4 py-2">Strips away irrelevant “features” and narrows the model’s attention to the most useful parts of the data, reducing noise and improving relevance.</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-300 px-4 py-2">Probability Awareness</td>
+                <td class="border border-gray-300 px-4 py-2">“Give me five app ideas for food delivery.”</td>
+                <td class="border border-gray-300 px-4 py-2">“Using a higher temperature setting (0.85), give me five unconventional food delivery app ideas targeted at rural communities, prioritizing novelty over feasibility.”</td>
+                <td class="border border-gray-300 px-4 py-2">Adjusts the model’s sampling distribution to increase creativity and variety—using randomness intentionally rather than relying on default settings.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <footer class="article-footer">
+          <div class="article-footer-content">
+            <p class="article-footer-text">
+              By applying ML fundamentals like feature engineering and probability awareness, you move from being a casual user to a practitioner capable of producing consistent, tailored, high-quality results with LLMs.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

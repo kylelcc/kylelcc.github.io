@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Applied Attention: Lessons from "Attention Is All You Need" - LCC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fragment+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="assets/blog-post.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  
+  <!-- MathJax for formula rendering -->
+  <script>
+    window.MathJax = {
+      tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header class="nav-header">
+    <a href="../index.html" class="logo">LCC</a>
+    <nav class="nav-links">
+      <a href="../blog.html" class="nav-link">Blog</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+      <button id="theme-toggle" class="theme-toggle">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+      </button>
+    </nav>
+    <button id="mobile-menu-button" class="mobile-menu-button">
+      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </header>
+
+  <main class="article-main">
+    <header class="article-header">
+      <div class="article-header-content">
+        <nav class="breadcrumb">
+          <a href="../blog.html" class="breadcrumb-link">Blog</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Applied Attention: Lessons from "Attention Is All You Need"</span>
+        </nav>
+        
+        <div class="article-meta">
+          <time class="article-date">August 12, 2025</time>
+          <span class="article-category">Artificial Intelligence</span>
+          <span class="reading-time">7 min read</span>
+        </div>
+        
+        <h1 class="article-title">Applied Attention: Lessons from "Attention Is All You Need"</h1>
+        <p class="article-subtitle">What the Transformer’s attention mechanism teaches about better prompt engineering</p>
+        
+        <div class="article-tags">
+          <span class="article-tag">Transformers</span>
+          <span class="article-tag">Prompt Engineering</span>
+          <span class="article-tag">Attention Mechanisms</span>
+        </div>
+      </div>
+    </header>
+
+    <article class="article-content">
+      <div class="article-container">
+
+        <section class="article-section">
+          <p class="article-intro">
+            Today I revisited <em>Attention Is All You Need</em> by Ashish Vaswani et al. (2017), the landmark paper that introduced the Transformer architecture. It’s a technical masterpiece, but my focus wasn’t just on understanding the mechanics — it was on extracting lessons I can apply directly to my craft in prompt engineering.
+          </p>
+        </section>
+
+        <section class="article-section">
+          <h2>The Core Idea of Attention</h2>
+          <p>At its heart, attention is a mechanism that lets a model dynamically decide which parts of the input matter most when producing each part of the output.</p>
+          <p>Before Vaswani et al.’s paper, most NLP architectures processed text sequentially. Either left-to-right (RNNs, LSTMs) or bidirectionally but still tied to step-by-step dependencies. This limited their ability to model long-range relationships because context from far away in the sequence could fade or distort.</p>
+          <p>The Transformer flipped this on its head with self-attention:</p>
+          <ul class="article-list">
+            <li>Every token in the input can “look” at every other token, regardless of distance.</li>
+            <li>The model computes relevance scores between tokens, telling it how much weight to give each word when producing a representation.</li>
+          </ul>
+        </section>
+
+        <section class="article-section">
+          <h2>Scaled Dot-Product Attention</h2>
+          <p>This is the mathematical engine behind self-attention:</p>
+          <p class="my-4 text-center">$$\text{Attention}(Q, K, V) = \text{softmax}\left( \frac{QK^T}{\sqrt{d_k}} \right) V$$</p>
+          
+          <h3>Intuition</h3>
+          <ul class="article-list">
+            <li><strong>Queries (Q):</strong> “What I’m looking for.”</li>
+            <li><strong>Keys (K):</strong> “What I contain.”</li>
+            <li><strong>Values (V):</strong> The actual content.</li>
+            <li>The dot product \( QK^T \) measures similarity between the query and each key.</li>
+            <li>Dividing by \( \sqrt{d_k} \) keeps gradients stable for large dimensions.</li>
+            <li>The softmax turns these scores into probabilities — an attention distribution.</li>
+            <li>The output is a weighted sum of the values, where high-scoring tokens contribute more.</li>
+          </ul>
+        </section>
+
+        <section class="article-section">
+          <h2>Why This Matters for NLP Models</h2>
+          <ul class="article-list">
+            <li><strong>BERT:</strong> Uses bidirectional self-attention for deep comprehension tasks.</li>
+            <li><strong>GPT:</strong> Uses masked self-attention for generative tasks, enforcing causality.</li>
+          </ul>
+          <p>The beauty of attention is that it’s parallelizable, captures global dependencies efficiently, and adapts dynamically — making it the foundation of modern NLP.</p>
+        </section>
+
+        <section class="article-section">
+          <h2>Takeaways for Prompt Engineering</h2>
+          <h3>Bidirectional for Understanding, Unidirectional for Creation</h3>
+          <p>For comprehension-heavy tasks, provide full context upfront (like BERT). For creative or sequential tasks, feed context incrementally (like GPT).</p>
+
+          <h3>Guide Attention With Structure</h3>
+          <p>Separate constraints, examples, and context into distinct blocks; use bullet points for multi-step instructions.</p>
+
+          <h3>Anchor With Examples</h3>
+          <p>Provide example → output pairs before the real task to bias the model’s internal attention.</p>
+
+          <h3>Maintain Attention Consistency</h3>
+          <p>Keep tone, role, and constraints consistent — avoid introducing conflicting instructions midway.</p>
+        </section>
+
+        <footer class="article-footer">
+          <div class="article-footer-content">
+            <p class="article-footer-text">
+              The Transformer doesn’t think linearly; it thinks relationally. In prompt engineering, I’m shaping an attention landscape: spotlighting what matters, dimming what doesn’t, and removing noise so the model aligns with my goal. In other words — prompt engineering is applied attention engineering.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
